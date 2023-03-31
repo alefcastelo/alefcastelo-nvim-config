@@ -1,0 +1,5 @@
+require("alefcastelo.plugins-setup")
+require("alefcastelo.core.options")
+require("alefcastelo.core.keymaps")
+require("alefcastelo.core.colorscheme")
+require("alefcastelo.plugins.nvim-tree")
