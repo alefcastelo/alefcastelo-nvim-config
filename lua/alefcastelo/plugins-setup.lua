@@ -25,16 +25,22 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-
+  use("bluz71/vim-moonfly-colors")
   use("nvim-lua/plenary.nvim")
-
   use("christoomey/vim-tmux-navigator")
- 
   use("jiangmiao/auto-pairs")
- 
   use("szw/vim-maximizer")
-
   use("nvim-tree/nvim-tree.lua")
+  use("nvim-tree/nvim-web-devicons")
+  use("nvim-lualine/lualine.nvim")
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+  use("hrsh7th/nvim-cmp") 
+  use("hrsh7th/cmp-buffer") 
+  use("hrsh7th/cmp-path")  
+  use("L3MON4D3/LuaSnip") 
+  use("saadparwaiz1/cmp_luasnip") 
+  use("rafamadriz/friendly-snippets") 
 
   if packer_bootstrap then
     require("packer").sync()
