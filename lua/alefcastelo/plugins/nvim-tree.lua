@@ -1,24 +1,34 @@
+-- import nvim-tree plugin safely
 local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then
   return
 end
 
-vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
-
+-- recommended settings from nvim-tree documentation
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- change color for arrows in tree to light blue
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+
+-- configure nvim-tree
 nvimtree.setup({
+  -- disable window_picker for
+  -- explorer to work well with
+  -- window splits
   actions = {
     open_file = {
       window_picker = {
-        enable = false
-      }
-    }
-  }
+        enable = false,
+      },
+    },
+  },
+  -- 	git = {
+  -- 		ignore = false,
+  -- 	},
 })
 
-
+-- open nvim-tree on setup
 
 local function open_nvim_tree(data)
   -- buffer is a [No Name]
@@ -37,7 +47,7 @@ local function open_nvim_tree(data)
   end
 
   -- open the tree
-  require("nvim-tree.api").tree.open()
+  --require("nvim-tree.api").tree.()
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
