@@ -16,4 +16,7 @@ saga.setup({
       normal_bg = "#022746",
     },
   },
+  symbol_in_winbar = {
+    enable = false
+  },
 })
