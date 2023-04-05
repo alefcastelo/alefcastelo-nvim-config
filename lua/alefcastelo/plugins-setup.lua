@@ -9,7 +9,7 @@ local ensure_packer = function()
   return false
 end
 
-local packer_bootstrap = ensure_packer() -- true if packer was just installed
+local packer_bootstrap = ensure_packer()
 
 vim.cmd([[ 
   augroup packer_user_config
@@ -25,7 +25,9 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
+  use("tomasiser/vim-code-dark")
   use("bluz71/vim-moonfly-colors")
+  use("nanotech/jellybeans.vim")
   use("nvim-lua/plenary.nvim")
   use("christoomey/vim-tmux-navigator")
   use("szw/vim-maximizer")
@@ -36,24 +38,22 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
-  use("hrsh7th/nvim-cmp") -- completion plugin
-  use("hrsh7th/cmp-buffer") -- source for text in buffer
-  use("hrsh7th/cmp-path") -- source for file system paths
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
-  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
-  use("neovim/nvim-lspconfig") -- easily configure language servers
-  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
+  use("rafamadriz/friendly-snippets")
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/cmp-nvim-lsp")
+  use({ "glepnir/lspsaga.nvim", branch = "main" })
   use("jose-elias-alvarez/typescript.nvim")
   use("onsails/lspkind.nvim")
   use("Olical/conjure")
-  -- formatting & linting
-  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
-  -- treesitter configuration
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("jayp0521/mason-null-ls.nvim")
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -61,10 +61,8 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
-  -- auto closing
-  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
-  -- use("neoclide/coc.nvim")
+  use("windwp/nvim-autopairs")
+  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
   use("startup-nvim/startup.nvim")
 
   if packer_bootstrap then
