@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs")
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
   use("startup-nvim/startup.nvim")
+  use("stephpy/vim-php-cs-fixer")
+  use("mg979/vim-visual-multi")
 
   if packer_bootstrap then
     require("packer").sync()
