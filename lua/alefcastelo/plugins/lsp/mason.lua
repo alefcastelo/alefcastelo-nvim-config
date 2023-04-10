@@ -18,6 +18,7 @@ mason_lspconfig.setup({
     "intelephense",
     "clojure_lsp",
     "lua_ls",
+    "eslint",
     "jdtls"
   },
   automatic_installation = true,
