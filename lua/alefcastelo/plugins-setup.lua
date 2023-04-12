@@ -50,10 +50,9 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-nvim-lsp")
   use("jose-elias-alvarez/typescript.nvim")
   use("onsails/lspkind.nvim")
-  use({"Olical/conjure", version = "v4.41.0"})
+  use("Olical/conjure")
   use("jose-elias-alvarez/null-ls.nvim")
   use("jayp0521/mason-null-ls.nvim")
-  use("bakpakin/fennel.vim")
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -66,6 +65,13 @@ return packer.startup(function(use)
   use("startup-nvim/startup.nvim")
   use("stephpy/vim-php-cs-fixer")
   use("mg979/vim-visual-multi")
+  use("ThePrimeagen/harpoon")
+  use({
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup()
+    end,
+  })
 
   if packer_bootstrap then
     require("packer").sync()
