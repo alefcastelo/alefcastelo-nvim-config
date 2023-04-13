@@ -50,7 +50,7 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-nvim-lsp")
   use("jose-elias-alvarez/typescript.nvim")
   use("onsails/lspkind.nvim")
-  use({"Olical/conjure", version = "v4.43.0"})
+  use({ "Olical/conjure", version = "v4.44.0" })
   use("jose-elias-alvarez/null-ls.nvim")
   use("jayp0521/mason-null-ls.nvim")
   use({
