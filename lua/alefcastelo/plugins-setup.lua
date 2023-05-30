@@ -72,6 +72,7 @@ return packer.startup(function(use)
       require("inc_rename").setup()
     end,
   })
+  use("github/copilot.vim")
 
   if packer_bootstrap then
     require("packer").sync()
