@@ -73,6 +73,7 @@ return packer.startup(function(use)
     end,
   })
   use("github/copilot.vim")
+  use("lukas-reineke/indent-blankline.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

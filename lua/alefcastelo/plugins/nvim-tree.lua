@@ -23,7 +23,7 @@ nvimtree.setup({
     width = 40,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
   actions = {
     open_file = {
@@ -32,9 +32,9 @@ nvimtree.setup({
       },
     },
   },
-  -- 	git = {
-  -- 		ignore = false,
-  -- 	},
+  git = {
+  	ignore = false,
+  },
 })
 
 
