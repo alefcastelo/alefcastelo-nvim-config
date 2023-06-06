@@ -27,6 +27,7 @@ lualine_moonfly.command = {
 lualine.setup({
   options = {
     theme = lualine_moonfly,
+    disabled_filetypes = { 'packer', 'NvimTree' },
   },
 })
 

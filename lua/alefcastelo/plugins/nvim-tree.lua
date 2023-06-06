@@ -6,9 +6,25 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.cmd([[ highlight NvimTreeIndentMarker guifg=#ffffff ]])
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#14a3c7 ]])
 
 nvimtree.setup({
+  renderer = {
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "", -- arrow when folder is closed
+          arrow_open = "", -- arrow when folder is open
+        },
+      },
+    },
+  },
+  view = {
+    width = 40,
+  },
+  filters = {
+    dotfiles = true,
+  },
   actions = {
     open_file = {
       window_picker = {
