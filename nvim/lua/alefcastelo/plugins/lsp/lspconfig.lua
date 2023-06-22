@@ -25,13 +25,12 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
   keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-  keymap.set("n", "<leader>rn", ":IncRename ", opts) -- smart rename
   keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
   keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
   keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
   keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
+  keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
   if client.name == "tsserver" then
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
     keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
@@ -72,7 +71,27 @@ lspconfig.clojure_lsp.setup({
 
 lspconfig.intelephense.setup({
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    intelephense = {
+      environment = {
+        phpVersion = "8.2.6",
+      },
+      files = {
+        exclude = {
+          "**/.git/**",
+          "**/.svn/**",
+          "**/.hg/**",
+          "**/CVS/**",
+          "**/.DS_Store/**",
+          "**/node_modules/**",
+          "**/bower_components/**",
+          "**/vendor/**/{Tests,tests}/**",
+          "**/.history/**"
+        },
+      },
+    },
+  },
 })
 
 lspconfig.lua_ls.setup({

@@ -66,14 +66,9 @@ return packer.startup(function(use)
   use("stephpy/vim-php-cs-fixer")
   use("mg979/vim-visual-multi")
   use("ThePrimeagen/harpoon")
-  use({
-    "smjonas/inc-rename.nvim",
-    config = function()
-      require("inc_rename").setup()
-    end,
-  })
   use("github/copilot.vim")
   use("lukas-reineke/indent-blankline.nvim")
+  use("editorconfig/editorconfig-vim")
 
   if packer_bootstrap then
     require("packer").sync()

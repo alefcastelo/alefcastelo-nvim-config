@@ -24,6 +24,7 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<cr>")
 
 keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
+-- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>")
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")

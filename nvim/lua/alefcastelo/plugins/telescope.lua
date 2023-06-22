@@ -8,6 +8,7 @@ if not actions_setup then
   return
 end
 
+
 telescope.setup({
   defaults = {
     mappings = {
@@ -18,6 +19,11 @@ telescope.setup({
       },
     },
   },
+  pickers = {
+		find_files = {
+			find_command = {"rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+		},
+	},
 })
 
 telescope.load_extension("fzf")

@@ -17,6 +17,7 @@ mason_lspconfig.setup({
     "cssls",
     "intelephense",
     "clojure_lsp",
+    "phpactor",
     "lua_ls",
     "jdtls"
   },
