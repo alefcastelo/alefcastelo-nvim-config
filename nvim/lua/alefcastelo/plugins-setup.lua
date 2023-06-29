@@ -51,8 +51,6 @@ return packer.startup(function(use)
   use("jose-elias-alvarez/typescript.nvim")
   use("onsails/lspkind.nvim")
   use({ "Olical/conjure", version = "v4.44.0" })
-  use("jose-elias-alvarez/null-ls.nvim")
-  use("jayp0521/mason-null-ls.nvim")
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
